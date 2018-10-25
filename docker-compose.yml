@@ -1,0 +1,21 @@
+version: '3'
+services:
+  hbase:
+    build: hbase/
+    #    ports:
+            #    - ""
+ 
+  hdfs:
+    build: hdfs/
+    #    ports:
+            #    - "5000"
+
+  hive:
+    build: hive/
+    #    ports:
+            #    - ""
+
+  knox:
+    build: knox/
+    ports:
+    - "8443"
