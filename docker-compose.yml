@@ -28,7 +28,9 @@ services:
     ports:
     - "8443"
 
-  jmeter:
+  jmeter-hdfs:
     build: jmeter/
-    hostname: jmeter
+    volumes:
+    - "$PWD/jmeter_testresults:/opt/jmeter_testresults"
+    command: hdfs
 
