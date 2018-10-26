@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-docker-compose up --force-recreate jmeter-hdfs
+rm -rf jmeter_testresults
+docker-compose run --rm -T jmeter-hdfs | tar -xf -
