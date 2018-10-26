@@ -23,5 +23,7 @@ services:
     build: knox/
     hostname: knox
     entrypoint: /gateway.sh
+    depends_on:
+    - ldap
     ports:
     - "8443"
