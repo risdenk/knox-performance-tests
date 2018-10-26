@@ -81,7 +81,7 @@
 
     <service>
         <role>WEBHBASE</role>
-        <url>http://hbase:60080</url>
+        <url>http://hbase:8080</url>
     </service>
 
     <service>
