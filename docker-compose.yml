@@ -9,10 +9,17 @@ services:
     hostname: hdfs
     ports:
     - "9870"
+    volumes:
+    - hdfs:/opt/hadoop
 
   hive:
     build: hive/
     hostname: hive
+    depends_on:
+    - hdfs
+    volumes:
+    - hdfs:/opt/hadoop:ro
+    command: ["--hiveconf", "hive.server2.transport.mode=http"]
 
   ldap:
     build: knox/
@@ -35,3 +42,6 @@ services:
   jmeter-hbase:
     build: jmeter/
     command: hbase
+
+volumes:
+  hdfs:
