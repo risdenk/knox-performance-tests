@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+- sudo apt-get install -y --only-upgrade -o Dpkg::Options::=--force-confnew docker-ce
+- sudo rm /usr/local/bin/docker-compose
+- curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+- chmod +x docker-compose
+- sudo mv docker-compose /usr/local/bin
+- ./setup.sh
+
+script:
+- ./test.sh
