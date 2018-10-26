@@ -2,5 +2,5 @@
 
 set -eu
 
-docker-compose pull
-docker-compose up -d --force-recreate --build
+docker-compose build --pull
+docker-compose up -d --force-recreate

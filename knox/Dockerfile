@@ -14,6 +14,6 @@ USER knox
 
 RUN /opt/knox/bin/knoxcli.sh create-master --generate
 
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT "/entrypoint.sh"
+COPY ldap.sh /ldap.sh
+COPY gateway.sh /gateway.sh
 

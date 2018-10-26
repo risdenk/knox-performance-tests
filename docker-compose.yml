@@ -2,20 +2,26 @@ version: '3'
 services:
   hbase:
     build: hbase/
-    #    ports:
-            #    - ""
- 
+    hostname: hbase
+
   hdfs:
     build: hdfs/
-    #    ports:
-            #    - "5000"
+    hostname: hdfs
+    ports:
+    - "9870"
 
   hive:
     build: hive/
-    #    ports:
-            #    - ""
+    hostname: hive
+
+  ldap:
+    build: knox/
+    hostname: ldap
+    entrypoint: /ldap.sh
 
   knox:
     build: knox/
+    hostname: knox
+    entrypoint: /gateway.sh
     ports:
     - "8443"
