@@ -27,3 +27,8 @@ services:
     - ldap
     ports:
     - "8443"
+
+  jmeter:
+    build: jmeter/
+    hostname: jmeter
+
