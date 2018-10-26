@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker-compose up --force-recreate jmeter
+docker-compose up --force-recreate jmeter-hdfs
