@@ -31,6 +31,6 @@ services:
   jmeter-hdfs:
     build: jmeter/
     volumes:
-    - "$PWD/jmeter_testresults:/opt/jmeter_testresults"
+    - ./jmeter_testresults:/opt/jmeter_testresults
     command: hdfs
 
