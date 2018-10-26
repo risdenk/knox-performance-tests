@@ -13,6 +13,7 @@ RUN wget -O /opt/${JMETER_TAR} "https://www.apache.org/dyn/closer.cgi?filename=j
 RUN mkdir /opt/jmeter_testresults && chown -R jmeter /opt/jmeter_testresults
 
 COPY --chown=jmeter hdfs.jmx /opt/jmeter_testplans/hdfs.jmx
+COPY --chown=jmeter hbase.jmx /opt/jmeter_testplans/hbase.jmx
 
 WORKDIR /opt/jmeter
 

@@ -32,3 +32,6 @@ services:
     build: jmeter/
     command: hdfs
 
+  jmeter-hbase:
+    build: jmeter/
+    command: hbase

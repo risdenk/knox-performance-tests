@@ -2,3 +2,4 @@
 
 rm -rf jmeter_testresults
 docker-compose run --rm -T jmeter-hdfs | tar -xf -
+docker-compose run --rm -T jmeter-hbase | tar -xf -
