@@ -18,7 +18,7 @@
         <stringProp name="connectionAge">5000</stringProp>
         <stringProp name="dataSource">hive</stringProp>
         <stringProp name="dbUrl">jdbc:hive2://hive:10001/;transportMode=http;httpPath=cliservice</stringProp>
-        <stringProp name="driver"></stringProp>
+        <stringProp name="driver">org.apache.hive.jdbc.HiveDriver</stringProp>
         <boolProp name="keepAlive">true</boolProp>
         <stringProp name="password">admin-password</stringProp>
         <stringProp name="poolMax">0</stringProp>
@@ -34,7 +34,7 @@
         <stringProp name="connectionAge">5000</stringProp>
         <stringProp name="dataSource">knox-hive</stringProp>
         <stringProp name="dbUrl">jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive</stringProp>
-        <stringProp name="driver"></stringProp>
+        <stringProp name="driver">org.apache.hive.jdbc.HiveDriver</stringProp>
         <boolProp name="keepAlive">true</boolProp>
         <stringProp name="password">admin-password</stringProp>
         <stringProp name="poolMax">0</stringProp>
@@ -58,8 +58,8 @@
       </SetupThreadGroup>
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Hive - JDBC Request" enabled="true">
-          <stringProp name="dataSource"></stringProp>
-          <stringProp name="query"></stringProp>
+          <stringProp name="dataSource">hive</stringProp>
+          <stringProp name="query">select * from tbl limit 1000000</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -70,8 +70,8 @@
         </JDBCSampler>
         <hashTree/>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Knox - Hive - JDBC Request" enabled="true">
-          <stringProp name="dataSource"></stringProp>
-          <stringProp name="query"></stringProp>
+          <stringProp name="dataSource">knox-hive</stringProp>
+          <stringProp name="query">select * from tbl limit 1000000</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -96,8 +96,8 @@
       </ThreadGroup>
       <hashTree>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Hive - JDBC Request" enabled="true">
-          <stringProp name="dataSource"></stringProp>
-          <stringProp name="query"></stringProp>
+          <stringProp name="dataSource">hive</stringProp>
+          <stringProp name="query">select * from tbl limit 1000000</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>
@@ -108,8 +108,8 @@
         </JDBCSampler>
         <hashTree/>
         <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Knox - Hive - JDBC Request" enabled="true">
-          <stringProp name="dataSource"></stringProp>
-          <stringProp name="query"></stringProp>
+          <stringProp name="dataSource">knox-hive</stringProp>
+          <stringProp name="query">select * from tbl limit 1000000</stringProp>
           <stringProp name="queryArguments"></stringProp>
           <stringProp name="queryArgumentsTypes"></stringProp>
           <stringProp name="queryTimeout"></stringProp>

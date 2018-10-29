@@ -2,6 +2,8 @@
 
 set -eu
 
+cp /opt/hive/jdbc/* /opt/jmeter/lib/ 2>/dev/null || true
+
 COMPONENT="$1"
 
 rm -rf "/opt/jmeter_testresults/$COMPONENT"
