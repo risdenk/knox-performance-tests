@@ -3,6 +3,9 @@ services:
   hbase:
     build: hbase/
     hostname: hbase
+    volumes:
+    - hbase:/opt/hbase
+
 
   hdfs:
     build: hdfs/
@@ -57,6 +60,38 @@ services:
     volumes:
     - hive:/opt/hive:ro
 
+  test-hbase:
+    image: busybox
+    depends_on:
+    - hbase
+    - knox
+
+  test-hdfs:
+    build: test-hdfs/
+    depends_on:
+    - hdfs
+    - knox
+    volumes:
+    - hdfs:/opt/hadoop:ro
+
+  test-hbase:
+    build: test-hbase/
+    depends_on:
+    - hbase
+    - knox
+    volumes:
+    - hbase:/opt/hbase:ro
+
+  test-hive:
+    build: test-hive/
+    depends_on:
+    - hive
+    - knox
+    volumes:
+    - hdfs:/opt/hadoop:ro
+    - hive:/opt/hive:ro
+
 volumes:
+  hbase:
   hdfs:
   hive:
