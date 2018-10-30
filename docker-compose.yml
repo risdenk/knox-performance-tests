@@ -21,7 +21,16 @@ services:
     volumes:
     - hdfs:/opt/hadoop:ro
     - hive:/opt/hive
-    command: ["--hiveconf", "hive.server2.transport.mode=http"]
+    command: ["--hiveconf", "hive.server2.transport.mode=http", "--hiveconf", "hive.server2.thrift.resultset.max.fetch.size=100000"]
+
+  hive-binary:
+    build: hive/
+    hostname: hive-binary
+    depends_on:
+    - hdfs
+    volumes:
+    - hdfs:/opt/hadoop:ro
+    command: ["--hiveconf", "hive.server2.transport.mode=binary", "--hiveconf", "hive.server2.thrift.resultset.max.fetch.size=100000"]
 
   ldap:
     build: knox/
