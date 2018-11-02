@@ -4,7 +4,7 @@ RUN apt-get install wget
 
 RUN useradd -m -u 1000 hive
 
-ENV HIVE_VERSION=3.1.0
+ENV HIVE_VERSION=3.1.1
 ENV HIVE_FOLDER=apache-hive-${HIVE_VERSION}-bin
 ENV HIVE_TAR=${HIVE_FOLDER}.tar.gz
 

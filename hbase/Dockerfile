@@ -4,7 +4,7 @@ RUN apt-get install wget
 
 RUN useradd -u 1000 hbase
 
-ENV HBASE_VERSION=2.1.0
+ENV HBASE_VERSION=2.1.1
 ENV HBASE_FOLDER=hbase-${HBASE_VERSION}
 ENV HBASE_TAR=${HBASE_FOLDER}-bin.tar.gz
 
