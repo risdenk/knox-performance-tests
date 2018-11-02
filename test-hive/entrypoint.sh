@@ -50,27 +50,27 @@ command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gat
 command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
 command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
 
-#echo
-#echo "Beeline binary fetchSize=50000"
-#echo
+echo
+echo "Beeline binary fetchSize=10000"
+echo
 
-#command time beeline -u 'jdbc:hive2://hive-binary:10000/;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
-#command time beeline -u 'jdbc:hive2://hive-binary:10000/;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
-#command time beeline -u 'jdbc:hive2://hive-binary:10000/;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://hive-binary:10000/;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://hive-binary:10000/;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://hive-binary:10000/;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
 
-#echo
-#echo "Beeline http fetchSize=50000"
-#echo
+echo
+echo "Beeline http fetchSize=10000"
+echo
 
-#command time beeline -u 'jdbc:hive2://hive:10001/;transportMode=http;httpPath=cliservice;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
-#command time beeline -u 'jdbc:hive2://hive:10001/;transportMode=http;httpPath=cliservice;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
-#command time beeline -u 'jdbc:hive2://hive:10001/;transportMode=http;httpPath=cliservice;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://hive:10001/;transportMode=http;httpPath=cliservice;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://hive:10001/;transportMode=http;httpPath=cliservice;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://hive:10001/;transportMode=http;httpPath=cliservice;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
 
-#echo
-#echo "Beeline knox http fetchSize=50000"
-#echo
+echo
+echo "Beeline knox http fetchSize=10000"
+echo
 
-#command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
-#command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
-#command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive;fetchSize=50000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
+command time beeline -u 'jdbc:hive2://knox:8443/;transportMode=http;httpPath=gateway/sandbox/hive;fetchSize=10000' -n admin -p admin-password -e 'select * from tbl limit 200000' > /dev/null
 
