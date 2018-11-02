@@ -22,9 +22,9 @@ echo
 echo "HDFS -text"
 echo
 
-command time hdfs dfs -text hdfs:///tmp/testhive/data.txt >/dev/null
-command time hdfs dfs -text hdfs:///tmp/testhive/data.txt >/dev/null
-command time hdfs dfs -text hdfs:///tmp/testhive/data.txt >/dev/null
+command time hdfs dfs -text hdfs:///tmp/testhive/data.txt | head -n 200000 >/dev/null
+command time hdfs dfs -text hdfs:///tmp/testhive/data.txt | head -n 200000 >/dev/null
+command time hdfs dfs -text hdfs:///tmp/testhive/data.txt | head -n 200000 >/dev/null
 
 echo
 echo "Beeline binary default"
