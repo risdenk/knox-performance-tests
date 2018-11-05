@@ -3,4 +3,28 @@
         <name>dfs.replication</name>
         <value>1</value>
     </property>
+    <property>
+        <name>dfs.namenode.kerberos.principal</name>
+        <value>nn/_HOST@EXAMPLE.COM</value>
+    </property>
+    <property>
+        <name>dfs.namenode.keytab.file</name>
+        <value>/opt/hadoop/nn.service.keytab</value>
+    </property>
+    <property>
+        <name>dfs.secondary.namenode.kerberos.principal</name>
+        <value>sn/_HOST@EXAMPLE.COM</value>
+    </property>
+    <property>
+        <name>dfs.secondary.namenode.keytab.file</name>
+        <value>/opt/hadoop/sn.service.keytab</value>
+    </property>
+    <property>
+        <name>dfs.datanode.kerberos.principal</name>
+        <value>dn/_HOST@EXAMPLE.COM</value>
+    </property>
+    <property>
+        <name>dfs.datanode.keytab.file</name>
+        <value>/opt/hadoop/dn.service.keytab</value>
+    </property>
 </configuration>

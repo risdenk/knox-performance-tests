@@ -13,14 +13,15 @@ RUN wget --quiet -O /opt/${HADOOP_TAR} "https://www.apache.org/dyn/closer.cgi?fi
 ENV HADOOP_HOME=/opt/hadoop
 WORKDIR /opt/hadoop
 
-COPY hdfs-site.xml /opt/hadoop/etc/hadoop/hdfs-site.xml
-COPY core-site.xml /opt/hadoop/etc/hadoop/core-site.xml
-
 RUN chown -R hdfs /opt/hadoop
 
-USER hdfs
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y krb5-user
 
+USER hdfs
 RUN bin/hdfs namenode -format
+
+COPY --chown=hdfs hdfs-site.xml /opt/hadoop/etc/hadoop/hdfs-site.xml
+COPY --chown=hdfs core-site.xml /opt/hadoop/etc/hadoop/core-site.xml
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT "/entrypoint.sh"

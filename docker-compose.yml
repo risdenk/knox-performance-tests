@@ -1,45 +1,77 @@
-version: '3'
+version: '3.7'
 services:
+  kdc:
+    build: kdc/
+    hostname: kdc
+    domainname: example.com
+    volumes:
+    - kdc:/etc/docker-kdc
+    networks:
+    - example
+
   hbase:
     build: hbase/
     hostname: hbase
+    domainname: example.com
+    depends_on:
+    - kdc
     volumes:
+    - kdc:/etc/docker-kdc
     - hbase:/opt/hbase
-
+    networks:
+    - example
 
   hdfs:
     build: hdfs/
     hostname: hdfs
+    domainname: example.com
+    depends_on:
+    - kdc
     volumes:
+    - kdc:/etc/docker-kdc
     - hdfs:/opt/hadoop
+    networks:
+    - example
 
   hive:
     build: hive/
     hostname: hive
+    domainname: example.com
     depends_on:
+    - kdc
     - hdfs
     volumes:
+    - kdc:/etc/docker-kdc
     - hdfs:/opt/hadoop:ro
     - hive:/opt/hive
     command: ["--hiveconf", "hive.server2.transport.mode=http", "--hiveconf", "hive.server2.thrift.resultset.max.fetch.size=100000"]
+    networks:
+    - example
 
   hive-binary:
     build: hive/
     hostname: hive-binary
+    domainname: example.com
     depends_on:
+    - kdc
     - hdfs
     volumes:
+    - kdc:/etc/docker-kdc
     - hdfs:/opt/hadoop:ro
     command: ["--hiveconf", "hive.server2.transport.mode=binary", "--hiveconf", "hive.server2.thrift.resultset.max.fetch.size=100000"]
+    networks:
+    - example
 
   ldap:
     build: knox/
     hostname: ldap
+    domainname: example.com
     entrypoint: /ldap.sh
 
   knox:
     build: knox/
     hostname: knox
+    domainname: example.com
     entrypoint: /gateway.sh
     depends_on:
     - ldap
@@ -101,6 +133,12 @@ services:
     - hive:/opt/hive:ro
 
 volumes:
+  kdc:
   hbase:
   hdfs:
   hive:
+
+networks:
+   example:
+     name: example.com
+
